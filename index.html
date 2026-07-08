@@ -1,0 +1,159 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>PRODYGY</title>
+        <meta name="description" content="TIENDA WEB SOBRE ARTICULOS Y COMPONENTES DE COMPUTADORAS." />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+
+        <header>
+            <div class="container nav">
+                <a href="#" class="brand">
+                    <img src="lofodepafiprody.png" alt="Logo">
+                    <span class="brand-name">PRODYGY</span>
+                </a>
+                <div class="nav-links">
+                    <a href="#productos">Productos</a>
+                    <a href="#nosotros">Nosotros</a>
+                    <a href="#contacto">Contacto</a>
+                    <button id="cart-icon" class="btn btn-primary" aria-label="Abrir carrito de compras">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 12.42a2 2 0 0 0 2 1.58h9.72a2 2 0 0 0 2-1.58L23 6H6"></path></svg>
+                        <span id="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero container">
+                <div class="hero-card">
+                    <h1>PRODYGY</h1>
+                    <h1>Productos de calidad.</h1>
+                    <p>Precios justos.</p>
+                    <div class="actions">
+                        <a href="#productos" class="btn btn-primary">Ver catálogo</a>
+                        <a href="#contacto" class="btn btn-ghost">Contacto</a>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-value">+1500</span>
+                            <span class="stat-label">Entregas totales</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value">24-48h</span>
+                            <span class="stat-label">Entrega local</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value">100%</span>
+                            <span class="stat-label">Productos originales</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                <img src="lofodepafiprody.png" alt="Logo de la tienda"> 
+                </div>
+            </section>
+
+            <hr>
+
+            <div id="productos" class="anchor-spacer" aria-hidden="true"></div>
+            <section id="catalog-view" class="catalog-section container">
+                <h2 class="section-title">Nuestros Productos</h2>
+                <div class="filter-controls">
+                    <input type="text" id="search-bar" placeholder="Buscar productos...">
+                    <div class="filter-buttons">
+                    <button class="btn filter-btn" data-filter="all">Todos</button>
+                    <button class="btn filter-btn" data-filter="Laptops">Laptops</button>
+                    <button class="btn filter-btn" data-filter="Proyectores">Proyectores</button>
+                    <button class="btn filter-btn" data-filter="Impresoras">Impresoras</button>
+                    <button class="btn filter-btn" data-filter="Gabinete">Gabinete</button>
+                    <button class="btn filter-btn" data-filter="Switch">Switch</button>
+                    <button class="btn filter-btn" data-filter="Servidor">Servidores</button>
+                    <button class="btn filter-btn" data-filter="Estacion">CPU</button>
+                    <button class="btn filter-btn" data-filter="PC">PC</button>
+                    <button class="btn filter-btn" data-filter="Procesadores">Procesadores</button>
+                    <button class="btn filter-btn" data-filter="Videoconferencias">Videoconferencias</button>
+                    <button class="btn filter-btn" data-filter="Accesorios">Accesorios</button>
+                    </div>
+                </div>
+                <div class="product-grid" id="product-list"></div>
+            </section>
+
+            <section id="product-detail-view" class="detail-section container" style="display: none;">
+                <button id="back-btn" class="btn btn-ghost sticky-back" aria-label="Volver al catálogo">&larr; Volver al catálogo</button>
+                <div class="product-info-container">
+                    <div class="product-image-large">
+                        <img id="detail-image" src="" alt="Imagen del producto">
+                    </div>
+                    <div class="product-details">
+                        <h2 id="detail-name"></h2>
+                        <p id="detail-description"></p>
+                        <span id="detail-price" class="product-price"></span>
+                        <div class="contact-buttons">
+                            <button id="add-to-cart-btn" class="btn btn-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 12.42a2 2 0 0 0 2 1.58h9.72a2 2 0 0 0 2-1.58L23 6H6"></path></svg>
+                                Agregar al Carrito
+                            </button>
+                            <a href="https://wa.me/numerodetelefono" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="mailto:tucorreo@gmail.com" class="btn btn-gmail">Gmail</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="related-products">
+                   
+                    <div id="related-products-list" class="product-grid"></div>
+                </div>
+            </section>
+
+            <hr>
+
+            <section id="nosotros" class="nosotros-section container" aria-labelledby="nosotros-title" style="margin-top: 24px;">
+                <div class="info-card">
+                    <div class="info-pill">Nosotros</div>
+                    <h2 id="nosotros-title" class="info-title">Transparencia y servicio</h2>
+                    <p class="info-text">
+                        Somos un emprendimiento comprometido con ofrecer productos y componentes de marcas confiables, precios justos y atención personalizada. 
+                        Nuestro objetivo es que cada cliente reciba productos originales y asesoría.
+                    </p>
+                </div>
+            </section>
+
+            <hr>
+
+            <section id="contacto" class="contact-section container" aria-labelledby="contacto-title" style="margin-top: 24px;">
+                <div class="info-card">
+                    <div class="info-pill">Contáctanos</div>
+                    <h2 id="contacto-title" class="info-title">Estamos para ayudarte</h2>
+                    <p class="info-text">
+                        Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarnos a través de nuestras redes sociales o correo electrónico.
+                    </p>
+                    <div class="contact-info">
+                        <a href="https://wa.me/numerodetelefono" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                        <a href="mailto:tucorreo@gmail.com" class="btn btn-gmail">Gmail</a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <div id="cart-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>🛍️ Carrito de Compras</h2>
+                <div id="cart-items-container">
+                    </div>
+                <div id="cart-summary">
+                    <p>Total: <span id="cart-total-price">$0.00</span></p>
+                    <button id="checkout-btn" class="btn btn-primary" disabled>Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+        <script src="./script.js" defer></script>
+    </body>
+    </html>
